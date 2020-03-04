@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @items = Order.find(params[:id]).line_items
   end
 
   def create
@@ -53,6 +54,7 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
+    puts "IN CREATE"
     order
   end
 
