@@ -3,15 +3,26 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
 // App
 @import "products";
 
 // Global
 body {
   padding-top: 70px;
+  background-image: image-url('background.jpg'); 
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+.navbar-default{
+  background-color: #CCFFCC	;
+}
+#background-image{
+  background: url('/assets/background.jpg');
 }
