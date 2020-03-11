@@ -16,6 +16,11 @@
       There's an active <%= active_sale.name %> sale going on! <strong>Everything is <%= active_sale.percent_off %>% off! </strong>
     </p>
   <% end %>
+  <% flash.each do |type, msg| %>
+  <div class="alert alert-danger">
+    <%= msg %>
+  </div>
+<% end %>
     <%= yield %>
   </main>
 

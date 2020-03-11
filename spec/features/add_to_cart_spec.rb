@@ -30,6 +30,6 @@ RSpec.feature "Visitor adds a product to their cart", type: :feature, js: true d
     # VERIFY
     expect(page).to have_text 'My Cart (1)'
     save_screenshot
-    puts page.html
+   # puts page.html
   end
 end

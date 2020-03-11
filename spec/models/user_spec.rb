@@ -48,15 +48,15 @@ RSpec.describe User, type: :model do
     before(:all) do @user = User.create(name: "name", email: "different123@email.com", password: "password", password_confirmation: "password")
     end
     it "User should be able to login with correct email and password" do
-      @session = @user.authenticate_with_credentials("different123@email.com","password")
+      @session = User.authenticate_with_credentials("different123@email.com","password")
       expect(@session).to eql(@user)
   end
     it "User should be able to login with spaces" do
-      @session1 = @user.authenticate_with_credentials("  different123@email.com","password")
+      @session1 = User.authenticate_with_credentials("  different123@email.com","password")
       expect(@session1).to eql(@user)
   end
     it "User should be able to login without case sensitive email" do
-      @session2 = @user.authenticate_with_credentials("DIFFERENT123@EMAIL.COM","password")
+      @session2 = User.authenticate_with_credentials("DIFFERENT123@EMAIL.COM","password")
       expect(@session2).to eql(@user)
   end
   after(:all) do User.delete(@user.id)
